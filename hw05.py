@@ -12,17 +12,17 @@ def get_letter():
     b = False
     while b == False:
         if d > 1:
-            print("bad length")
+            print("Error: it needs to be a single character.")
             let = input("Give an single uppercase letter: ")
             d = len(let)
             continue
         elif ord(let) not in my_list:
-            print("bad word")
+            print("Error: You provided the wrong character.")
             let = input("Give an single uppercase letter: ")
             d = len(let)
             continue
         else:
-            print("yes")
+
             b == True
             break
         
@@ -33,9 +33,22 @@ def get_letter():
 
 def get_digit():
     """ Add your own Docstring """
-    num = int(input("Give an single number character: "))
+    num = input("Give an single number character: ")
+    my_num_list = [ "1", "2", "3"]
+    while True:
+        if num.isdigit() == False:
+            print("Error: your input should be only digits.")
+            num = input("Give an single number character: ")
+            continue
+        elif num not in my_num_list:
+            print("Error: a single digit needs to be in [1,3].")
+            num = input("Give an single number character: ")
+            continue
+        else:
+            break
+            
     
-    return 0
+    return num
 
 
 def check_pattern(letter, digit, lst):
@@ -66,6 +79,7 @@ def main ():
     # -------------------------------------------------
 
     get_letter()
+    get_digit()
 
     # -------------------------------------------------
     # No need to modify anything Below this line
