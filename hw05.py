@@ -1,17 +1,40 @@
 """
-Name: (put your name here)
+Name: (Abigail Gladstone)
 Peers: (add any collaborators)
 References: (anything you checked to solve this)
 """
 
 def get_letter():
     """ Add your own Docstring """
-    # remove the default return and add your code
-    return ""
+    let = input("Give an single uppercase letter: ")
+    my_list = [65, 66, 67]
+    d = len(let)
+    b = False
+    while b == False:
+        if d > 1:
+            print("bad length")
+            let = input("Give an single uppercase letter: ")
+            d = len(let)
+            continue
+        elif ord(let) not in my_list:
+            print("bad word")
+            let = input("Give an single uppercase letter: ")
+            d = len(let)
+            continue
+        else:
+            print("yes")
+            b == True
+            break
+        
+
+    
+
+    return let
 
 def get_digit():
     """ Add your own Docstring """
-    # remove the default return and add your code
+    num = int(input("Give an single number character: "))
+    
     return 0
 
 
@@ -42,7 +65,7 @@ def main ():
     # ADD YOUR CODE UNDER THIS LINE
     # -------------------------------------------------
 
-    # Your code Here
+    get_letter()
 
     # -------------------------------------------------
     # No need to modify anything Below this line
