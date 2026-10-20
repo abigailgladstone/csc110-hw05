@@ -5,38 +5,33 @@ References: (anything you checked to solve this)
 """
 
 def get_letter():
-    """ Add your own Docstring """
+    """ This function will get an input from the user, then tnhat input is checked to make sure it follows the parameters, if it doesnt the loop will repeat"""
     let = input("Give an single uppercase letter: ")
-    my_list = [65, 66, 67]
+    my_list = [ 65, 66, 67] #will be used for ascii values
     d = len(let)
     b = False
     while b == False:
         if d > 1:
             print("Error: it needs to be a single character.")
             let = input("Give an single uppercase letter: ")
-            d = len(let)
+            d = len(let) #makes sure the input is only a single letter each time
             continue
-        elif ord(let) not in my_list:
+        elif ord(let) in my_list:
+            b = True
+        else:
             print("Error: You provided the wrong character.")
             let = input("Give an single uppercase letter: ")
             d = len(let)
-            continue
-        else:
-
-            b == True
-            break
-        
+    return let #lets main() access this value
 
     
 
-    return let
-
 def get_digit():
-    """ Add your own Docstring """
+    """ gets a digit from the user,  makes sure this digit is in the correct range. if not the loop will continue till a correct digit is inputed"""
     num = input("Give an single number character: ")
-    my_num_list = [ "1", "2", "3"]
+    my_num_list = [ "1", "2", "3"] #list of correct numbers
     while True:
-        if num.isdigit() == False:
+        if num.isdigit() == False: # makes sure only a number was inputed 
             print("Error: your input should be only digits.")
             num = input("Give an single number character: ")
             continue
@@ -45,16 +40,27 @@ def get_digit():
             num = input("Give an single number character: ")
             continue
         else:
-            break
+            break #exits the loop
             
     
-    return num
+    return num #lets main access this variable
 
 
 def check_pattern(letter, digit, lst):
-    """ Add your own Docstring """
-    # remove the default pass and add your code
-    pass
+    """ takes the correct inouts from the user, and matches it with words in the list"""
+    s = 0
+    print("Strings with the pattern:")
+    for i in lst: # i runs through every word in the list
+        if letter in i and digit in i:
+            if i.index(letter) < i.index(digit):
+                print(lst[s], end=" ") #makes sure they all go on the same line
+                s +=1 # moves to the next item
+            else:
+                s +=1
+        else:
+            s +=1 #moves to the next item
+    print()
+    
 
 
 #  The function main is INCOMPLETE, you must finish it
@@ -77,9 +83,28 @@ def main ():
     #          IF the user replies with anything else, the loop ends
     # ADD YOUR CODE UNDER THIS LINE
     # -------------------------------------------------
+    false = False
+    while false == False:
+        let = get_letter()
+        num = get_digit()
+        check_pattern(let, num, st_list)
+        ask_user = input("Try Again? (y/n): ")
+        while ask_user == "y":
+            let = get_letter()
+            num = get_digit()
+            check_pattern(let, num, st_list)
+            ask_user = input("Try Again? (y/n): ")
+            if ask_user == "y":
+                continue
+            else:
+                false = True
+                ask_user == "n"
+                break
+                
+        
+        
+            
 
-    get_letter()
-    get_digit()
 
     # -------------------------------------------------
     # No need to modify anything Below this line
