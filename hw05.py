@@ -1,7 +1,7 @@
 """
 Name: (Abigail Gladstone)
 Peers: (add any collaborators)
-References: (anything you checked to solve this)
+References: (https://realpython.com/ref/glossary/ascii/ & https://www.w3schools.com/python/ref_string_index.asp)
 """
 
 def get_letter():
@@ -56,7 +56,7 @@ def check_pattern(letter, digit, lst):
                 print(lst[s], end=" ") #makes sure they all go on the same line
                 s +=1 # moves to the next item
             else:
-                s +=1
+                s = s +1
         else:
             s +=1 #moves to the next item
     print()
@@ -106,11 +106,6 @@ def main ():
                 ask_user == "n"
                 break
                 
-        
-        
-            
-
-
     # -------------------------------------------------
     # No need to modify anything Below this line
     print("The End")
