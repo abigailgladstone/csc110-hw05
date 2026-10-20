@@ -52,7 +52,7 @@ def check_pattern(letter, digit, lst):
     print("Strings with the pattern:")
     for i in lst: # i runs through every word in the list
         if letter in i and digit in i:
-            if i.index(letter) < i.index(digit):
+            if i.index(letter) < i.index(digit): #makes sure only prints the item in list with letter first
                 print(lst[s], end=" ") #makes sure they all go on the same line
                 s +=1 # moves to the next item
             else:
@@ -89,6 +89,11 @@ def main ():
         num = get_digit()
         check_pattern(let, num, st_list)
         ask_user = input("Try Again? (y/n): ")
+        if ask_user == "y":
+            continue
+        else:
+            false = True
+            break
         while ask_user == "y":
             let = get_letter()
             num = get_digit()
